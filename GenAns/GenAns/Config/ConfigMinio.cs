@@ -9,13 +9,13 @@ namespace GenAns.Config
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             services.AddMinio(
-                configuration.GetSection("MinioCredentials")["Accsess"],
+                configuration.GetSection("MinioCredentials")["Access"],
                 configuration.GetSection("MinioCredentials")["Secret"]
                 );
             services.AddMinio(configureClient => configureClient
-            .WithEndpoint(configuration.GetSection("MinioCredentials")["URL"])
+            .WithEndpoint(configuration.GetSection("MinioCredentials")["URl"])
             .WithCredentials(
-                configuration.GetSection("MinioCredentials")["Accsess"],
+                configuration.GetSection("MinioCredentials")["Access"],
                 configuration.GetSection("MinioCredentials")["Secret"]
                 ));
             return services;
