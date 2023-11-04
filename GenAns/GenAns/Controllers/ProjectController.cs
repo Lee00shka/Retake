@@ -1,4 +1,5 @@
 ﻿using GenAns.Models.DTOs;
+using GenAns.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GenAns.Controllers
@@ -7,6 +8,13 @@ namespace GenAns.Controllers
     [Route("api/project")]
     public class ProjectController : ControllerBase
     {
+        private readonly ProjectService _projectService;
+
+        public ProjectController(ProjectService projectService)
+        {
+            _projectService = projectService;
+        }
+
         [HttpGet]
         [Route("{projectid}/photo")]
         public ActionResult<List<ShortPhotoDTO>> GetPhotos(Guid projectId)
