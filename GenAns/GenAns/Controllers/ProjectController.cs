@@ -19,7 +19,7 @@ namespace GenAns.Controllers
         [Route("{projectid}/photo")]
         public ActionResult<List<ShortPhotoDTO>> GetPhotos(Guid projectId)
         {
-            return Ok(new List<ShortPhotoDTO>());
+            return Ok(new List<ShortPhotoDTO>() );
         }
 
         [HttpGet]

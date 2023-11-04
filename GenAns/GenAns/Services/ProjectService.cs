@@ -18,5 +18,9 @@ namespace GenAns.Services
         {
 
         }
+        public void GetPhoto(Guid projectId)
+        {
+
+        }
     }
 }
